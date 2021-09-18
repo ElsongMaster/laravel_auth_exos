@@ -8,7 +8,7 @@
                         text-center text-uppercase text-white
                     "
                 >
-                    About
+                    {{$titre->h2About}}
                 </h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
@@ -18,23 +18,18 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
+                @foreach ($abouts as $AboutData )
+                    
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-4 ms-auto">
                         <p class="lead">
-                            Freelancer is a free bootstrap theme created by
-                            Start Bootstrap. The download includes the complete
-                            source files including HTML, CSS, and JavaScript as
-                            well as optional SASS stylesheets for easy
-                            customization.
+                            {{$AboutData->p1}}
                         </p>
                     </div>
                     <div class="col-lg-4 me-auto">
                         <p class="lead">
-                            You can create your own custom avatar for the
-                            masthead, change the icon in the dividers, and add
-                            your email address to the contact form to make it
-                            fully functional!
+                            {{$AboutData->p2}}
                         </p>
                     </div>
                 </div>
@@ -42,11 +37,12 @@
                 <div class="text-center mt-4">
                     <a
                         class="btn btn-xl btn-outline-light"
-                        href="https://startbootstrap.com/theme/freelancer/"
+                        href="{{$AboutData->link}}"
                     >
                         <i class="fas fa-download me-2"></i>
                         Free Download!
                     </a>
                 </div>
+                @endforeach
             </div>
         </section>

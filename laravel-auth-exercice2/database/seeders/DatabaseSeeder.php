@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             HeaderSeeder::class,
             TitreSeeder::class,
             PortfolioSeeder::class,
+            AboutSeeder::class,
+            FooterSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
     }
