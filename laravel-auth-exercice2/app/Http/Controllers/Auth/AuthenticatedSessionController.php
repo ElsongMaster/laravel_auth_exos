@@ -43,12 +43,20 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
-        Auth::guard('web')->logout();
+        if(Auth::check()){
 
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return redirect('/index');
+            Auth::guard('web')->logout();
+    
+            $request->session()->invalidate();
+    
+            $request->session()->regenerateToken();
+            // dd('bien connecté');
+            return redirect()->route('index');
+        }else{
+            dd('non connecté');
+            $errorsMsg = "Vous n'êtes pas connecté !";
+            return redirect()->route('index')->with('error',"Vous n'êtes pas connecté !");
+        };
+        // return;
     }
 }

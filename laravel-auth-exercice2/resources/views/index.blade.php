@@ -40,7 +40,16 @@
         <link href="{{asset('css/app.css')}}" rel="stylesheet" />
     </head>
     <body id="page-top">
-        <div class="container-fluid d-flex justify-content-end mb-5 me-5 bg-secondary ">
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul class="list-unstyled">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+            </ul>
+        </div>
+    @endif
+        {{-- <div class="container-fluid d-flex justify-content-end mb-5 me-5 bg-secondary ">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block me-5">
                     @auth
@@ -54,9 +63,9 @@
                     @endauth
                 </div>
             @endif
-        </div>
-        @include('partials.navBar')
-        <div class="container w-75">
+        </div> --}}
+        @include('partials.navBarTemplate')
+        <div class="container">
             @foreach ( $titres as $titre)
                 
             <!-- Masthead-->

@@ -1,3 +1,11 @@
+{{-- <ul class="nav d-flex flex-column  m-2">
+  <li class="nav-item"><a  href="{{route('index')}}" class="nav-link border text-center @if(request()->routeIs('index')) active @else '' @endif">Front</a></li>
+<li class="nav-item"><a  href="{{route('header_data.index')}}" class="nav-link border text-center @if(request()->routeIs('header_data.index')) active @else '' @endif">Header</a></li>
+<li class="nav-item"><a  href="{{route('portfolios.index')}}" class="nav-link border text-center @if(request()->routeIs('portfolios.index')) active @else '' @endif">Portfolio</a></li>
+  <li class="nav-item"><a  href="{{route('abouts.index')}}" class="nav-link border text-center @if(request()->routeIs('abouts.index')) active @else '' @endif">About</a></li>
+  <li class="nav-item"><a  href="{{route('footers.index')}}" class="nav-link border text-center @if(request()->routeIs('footers.index')) active @else '' @endif">Footer</a></li>
+</ul> --}}
+
 <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
@@ -11,25 +19,32 @@
          <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="#portfolio">
+        <a href="{{route('header_data.index')}}" class="text-light">
+          <i class='bx bx-heading'></i>
+          <span class="links_name">Header</span>
+        </a>
+         <span class="tooltip">Header</span>
+      </li>
+      <li>
+        <a href="{{route('portfolios.index')}}" class="text-light">
           <i class='bx bx-folder-open'></i>
           <span class="links_name">Portfolio</span>
         </a>
          <span class="tooltip">Portfolio</span>
       </li>
       <li>
-       <a href="#about">
+       <a href="{{route('abouts.index')}}" class="text-light">
          <i class='bx bx-user' ></i>
          <span class="links_name">About</span>
        </a>
        <span class="tooltip">About</span>
      </li>
      <li>
-       <a href="#contact">
+       <a href="{{route('footers.index')}}" class="text-light">
          <i class='bx bx-chat' ></i>
-         <span class="links_name">Contact</span>
+         <span class="links_name">Footer</span>
        </a>
-       <span class="tooltip">Contact</span>
+       <span class="tooltip">Footer</span>
      </li>
 
 
@@ -57,9 +72,9 @@
 
     <li class="border border-light w-100 mt-2"></li>
     <li class="mt-3">
-        <a href="{{route('backoffice')}}"> 
-            <i class='bx bx-server'></i>
-            <span class="tooltip">Backoffice</span>
+        <a href="{{route('index')}}"> 
+            <i class='bx bx-home'></i>
+            <span class="tooltip">Home</span>
         </a>
        
      </li>
