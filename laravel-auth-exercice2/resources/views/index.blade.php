@@ -91,6 +91,8 @@
                 </div>
             </div>
             <!-- Portfolio Modals-->
+            @foreach ($projects as $project )
+                
             <!-- Portfolio Modal 1-->
             <div
                 class="portfolio-modal modal fade"
@@ -162,6 +164,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
             <!-- Portfolio Modal 2-->
             <div
                 class="portfolio-modal modal fade"
