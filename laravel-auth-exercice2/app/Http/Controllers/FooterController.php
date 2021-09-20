@@ -47,7 +47,7 @@ class FooterController extends Controller
      */
     public function show(Footer $footer)
     {
-        //
+        return view('backoffice.footers.show',compact('footer'));
     }
 
     /**
@@ -58,7 +58,8 @@ class FooterController extends Controller
      */
     public function edit(Footer $footer)
     {
-        //
+         return view('backoffice.footers.edit',compact('footer'));
+
     }
 
     /**
@@ -81,6 +82,9 @@ class FooterController extends Controller
      */
     public function destroy(Footer $footer)
     {
-        //
+        $footer->delete();
+        return redirect()->route('header_data.index');
+
+
     }
 }

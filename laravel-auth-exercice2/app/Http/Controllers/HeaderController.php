@@ -47,9 +47,11 @@ class HeaderController extends Controller
      * @param  \App\Models\HeaderData  $headerData
      * @return \Illuminate\Http\Response
      */
-    public function show(HeaderData $headerData)
-    {
-        //
+    public function show( $id)
+    {   
+        $headerData = HeaderData::find($id);
+
+        return view('backoffice.headerData.show',compact('headerData'));
     }
 
     /**
@@ -58,9 +60,11 @@ class HeaderController extends Controller
      * @param  \App\Models\HeaderData  $headerData
      * @return \Illuminate\Http\Response
      */
-    public function edit(HeaderData $headerData)
+    public function edit($id)
     {
-        //
+        $headerData = HeaderData::find($id);
+        return view('backoffice.headerData.edit',compact('headerData'));
+
     }
 
     /**
@@ -70,9 +74,9 @@ class HeaderController extends Controller
      * @param  \App\Models\HeaderData  $headerData
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HeaderData $headerData)
+    public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -81,8 +85,12 @@ class HeaderController extends Controller
      * @param  \App\Models\HeaderData  $headerData
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HeaderData $headerData)
+    public function destroy($id)
     {
-        //
+               $headerData = HeaderData::find($id);
+               $headerData->delete();
+
+               return redirect()->route('header_data.index');
+
     }
 }

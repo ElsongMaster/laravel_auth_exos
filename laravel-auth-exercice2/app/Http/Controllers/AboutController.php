@@ -49,7 +49,7 @@ class AboutController extends Controller
      */
     public function show(About $about)
     {
-        //
+        return view('backoffice.abouts.show',compact('about'));
     }
 
     /**
@@ -60,7 +60,8 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-        //
+        return view('backoffice.abouts.edit',compact('about'));
+
     }
 
     /**
@@ -83,6 +84,7 @@ class AboutController extends Controller
      */
     public function destroy(About $about)
     {
-        //
+        $about->delete();
+        return redirect()->route('header_data.index');
     }
 }

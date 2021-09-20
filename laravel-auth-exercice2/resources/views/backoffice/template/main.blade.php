@@ -35,7 +35,7 @@
         <link href="{{asset('css/app.css')}}" rel="stylesheet" />
     <title>Document</title>
 </head>
-<body class="border border-danger ">
+<body >
     <div class="container-fluid ">
 
         <div class="container w-75 ">

@@ -23,22 +23,25 @@
 @endif
 
 
- <h1 class="text-center my-3 text-decoration-underline"> Update portfolio data</h1>
+ <h1 class="text-center my-3 text-decoration-underline"> Update header data</h1>
 
-<form action="{{route('portfolios.update',$portfolio->id)}}" method="post" enctype="multipart/form-data">
+<form action="{{route('header_data.update',$headerData->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
 <div class="mb-3">
-    <label for="nom_club" class="form-label">image Portfolio</label>
+    <label for="nom_club" class="form-label">image Avatar</label>
     <input type="file"  class="form-control" id="nom_club" name="nom_club">
 </div>
 
-
+<div class="mb-3">
+    <label for="ville" class="form-label">Intitulé poste</label>
+    <input type="text" value ="{{$headerData->skills}}"   class="form-control" id="ville" name="ville" >
+</div>
 
 
 <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>  
-</div>      
+</div>   
 @endsection

@@ -61,7 +61,7 @@
        </div>
     </footer>
     <div class="container d-flex justify-content-center my-5 py-1 ">
-        <p class="m-0 p-0  "><a href="{{route('abouts.show',$footerData->id)}}" class="btn btn-warning p-3 rounded  rounded-3 fs-4 text-secondary">SHOW</a></p>
+        <p class="m-0 p-0  "><a href="{{route('footers.show',$footerData->id)}}" class="btn btn-warning p-3 rounded  rounded-3 fs-4 text-secondary">SHOW</a></p>
     </div>
    @endforeach 
 @endsection
